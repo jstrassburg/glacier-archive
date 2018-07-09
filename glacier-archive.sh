@@ -26,6 +26,8 @@ find $BACKUP_DIR -newer $LAST_BACKUP -not -path $BACKUP_DIR | xargs tar cfvz $BA
 
 if [ $? -eq 0 ]; then
     echo "Uploading $BACKUP_FILE to AWS Glacier..."
+    aws glacier upload-archive --account-id - --vault-name $GLACIER_VAULT --body $BACKUP_FILE
+    rm -f $BACKUP_FILE
 else
     echo "No new files, skipping upload to AWS Glacier..."
 fi
