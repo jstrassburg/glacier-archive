@@ -17,7 +17,7 @@ Archive files in a directory (added since last execution) to AWS Glacier.
 
 That will output a jobId. Get job status with:
 
-`aws glacier list-jobs --account-id - --vault-name test-backup`
+`aws glacier list-jobs --account-id - --vault-name my-vault`
 
 Once complete:
 
