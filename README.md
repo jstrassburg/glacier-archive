@@ -13,7 +13,7 @@ Archive files in a directory (added since last execution) to AWS Glacier.
 
 ## List Archives
 
-`aws glacier initiate-job --account-id - --vault-name my-vault --job-parameters '{"Type": "inventory-retrieval"}'`
+`aws glacier initiate-job --account-id - --vault-name my-vault --job-parameters '{"Type": "inventory-retrieval", "SNSTopic": "arn:aws:sns:region:acct-number:topic-name"}'`
 
 That will output a jobId. Get job status with:
 
